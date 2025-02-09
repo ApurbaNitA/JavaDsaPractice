@@ -5,19 +5,21 @@ import java.util.Set;
 
 class practice {
     public static void main(String[] args) {
-        //String str = "Welcome to Sprinkler";
+        String str = "Welcome to Sprinkler";
         Scanner sc = new Scanner(System.in);
         String first = sc.nextLine();
         String second = sc.nextLine();
         int[]arr={0,0,1,1,1,0,1,0,1,1,0,0,0,0,1};
         int[]nums={2,3,1,1,1,0,1,5,1,1,5,6,6,6,1};
         System.out.println(reverse(first, second));
+        System.out.println(anagram(first, second));
         System.out.println(nonRepeatingChar("apurba"));
         System.out.println(countOnes(arr));
         findDuplicates(nums);
         System.out.println(Arrays.toString(fibonacci(7)));
         System.out.println(palindrome("karatarak"));
         System.out.println(sum(7,8));
+        System.out.println(rotateString("abcde","cdeab"));
     }
 
     public static String reverse(String str1, String str2) {
@@ -54,7 +56,7 @@ class practice {
                     break;
                 }
             }
-            if (found == false) {
+            if (!found) {
                 return str.charAt(i);
             }
         }
@@ -108,14 +110,15 @@ class practice {
     }
 
     public static boolean palindrome(String str){
-        char[] ch = str.toCharArray();
-        int n = ch.length;
-        for (int i = 0; i <n/2 ; i++) {
-            if (ch[i]!=ch[n-1-i]){
-                return false;
-            }
-        }
-        return true;
+//        char[] ch = str.toCharArray();
+//        int n = ch.length;
+//        for (int i = 0; i <n/2 ; i++) {
+//            if (ch[i]!=ch[n-1-i]){
+//                return false;
+//            }
+//        }
+        String reversed = new StringBuilder(str).reverse().toString();
+        return str.equalsIgnoreCase(reversed);
     }
 
     public static int sum(int a, int b){
@@ -123,6 +126,21 @@ class practice {
         sum =a+b;
         return sum;
     }
+
+    public static boolean rotateString(String s, String goal) {
+        int n = s.length();
+//        String abc="";
+//        for(int i=0; i<n; i++){
+//            abc = s.substring(i, n) + s.substring(0, i);
+//            if(goal.equalsIgnoreCase(abc)){
+//                return true;
+//            }
+//        }
+        String total = s + s;
+        return total.contains(goal);
+    }
+
+
 
 }
 

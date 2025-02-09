@@ -4,7 +4,7 @@ import java.util.List;
 
 public class demo1 {
     public static void main(String[] args) {
-//        WebDriver driver = new webdriver();
+//        WebDriver driver = new ChromeDriver();
 //        driver.get("http://flipkert.com");
 //        Thread.sleep(1000);
 //        WebElement mailid = driver.findElement(By.id("loginid"));
@@ -18,7 +18,7 @@ public class demo1 {
 //
         String a="143729";
         int n=2;
-//        min = 1372;
+//        min = 1329;
         System.out.println(findLeastString(a,n));
 
 
